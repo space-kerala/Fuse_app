@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f6c3b1d05c20bf487f4f631c03175afda73a99d8">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_284a2691ca8e34066e5b8241cfd7fb9ce20c657f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/TRY-master/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/aahav/Documents/TRY-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_08138d556711cdccb5254ef31dbc6e4a36037042/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/TRY-master/app/build/intermediates/exploded-aar/com.github.worker8/tourguide/1.0.17-SNAPSHOT/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8fc5b2d799afab49b7642fd6204633fc75e31eac">
+        <dex dex="/home/aahav/Documents/TRY-master/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.worker8-tourguide-1.0.17-SNAPSHOT_1f8de6ba0b167fb6a3e87917fc009d6ec3cfe6a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/exploded-aar/com.github.worker8/tourguide/1.0.17-SNAPSHOT/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8fc5b2d799afab49b7642fd6204633fc75e31eac">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.worker8-tourguide-1.0.17-SNAPSHOT_aa4da9966698cb9d6ad8a65d5251939ff57a1102/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/TRY-master/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ed5d59c415cafb98162ea629e6daa8c709b05b30">
+        <dex dex="/home/aahav/Documents/TRY-master/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_9fbcac29f47609dabb1cd403a9ec74ec8e957e5f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_60571c116f849575a44cee8ec42a38b4518084f1/classes.dex" />
+    </item>
+
+</items>

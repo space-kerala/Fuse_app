@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Expression</string>
+
+    <string name="title_activity_camera">Camera</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="welcome_challenge">Welcome to Expression Challenge Game.</string>
+    <string name="challenge_rule">Select right Expression name of the given image</string>
+    <string name="welcome_fuse">Welcome to Expression FUSE Game.</string>
+    <string name="fuse_rule">Swipe and select the images that match both Expression names</string>
+
+
+</resources>
