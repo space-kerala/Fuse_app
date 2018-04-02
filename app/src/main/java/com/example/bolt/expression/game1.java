@@ -1,12 +1,16 @@
 package com.example.bolt.expression;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,13 +21,16 @@ import java.util.Random;
 
 public class game1 extends AppCompatActivity {
 
-    public ImageView iv;
+    public ImageView iv,home;
     public Button b1,b2,b3;
     public int c,bi,idx,ix;
     public String me,t;
     public int count=0;
     public TextView tv;
     public CardView cardView;
+    private Animation shake;
+    private MediaPlayer mediaPlayer;
+
 
     //public obj o = new obj(R.drawable.anger , "anger");
     //public obj ob = new obj(R.drawable.joy, "JOY");
@@ -40,7 +47,10 @@ public class game1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game1);
         iv = (ImageView)findViewById(R.id.im);
+        home = (ImageView) findViewById(R.id.home_id);
         cardView = (CardView)findViewById(R.id.card_view_bottom);
+        mediaPlayer = MediaPlayer.create(this,R.raw.alternative_correct);
+        shake = AnimationUtils.loadAnimation(this, R.anim.shake);
         cardView.setCardBackgroundColor(Color.TRANSPARENT);
         createImg();
         iv.setBackgroundResource(c);
@@ -63,6 +73,14 @@ public class game1 extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    public void setHome(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
     }
 
     public void clicked (View v) {
@@ -75,9 +93,7 @@ public class game1 extends AppCompatActivity {
 
         //buttonText.equals(me)
         if(buttonText.equals(me)) {
-
-
-
+            v.startAnimation(shake);
 
             cardView.setCardBackgroundColor(Color.GREEN);
             new CountDownTimer(1000, 1000) {
@@ -95,30 +111,48 @@ public class game1 extends AppCompatActivity {
             }.start();
 
 
-
-            createImg();
-
-            count+=10;
-            String s = String.valueOf(count);
-            iv.setBackgroundResource(c);
-             shuffle();
-
-            Log.d("neItem", String.valueOf(list));
+         mediaPlayer.start();
+         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+             @Override
+             public void onCompletion(MediaPlayer mp) {
 
 
-            Collections.shuffle(buttonArray);
 
-            //cardView.setCardBackgroundColor(Color.GREEN);
 
-            buttonArray.get(2).setText(me);
-            buttonArray.get(1).setText(newItem.get(0));
-            buttonArray.get(0).setText(newItem.get(1));
 
-          // cardView.setCardBackgroundColor(Color.TRANSPARENT);
 
-            tv.setText(s);
-            newItem.add(me);
-            Log.d("neItem", String.valueOf(buttonArray));
+
+
+                 createImg();
+
+                 count+=10;
+                 String s = String.valueOf(count);
+                 iv.setBackgroundResource(c);
+                 shuffle();
+
+                 Log.d("neItem", String.valueOf(list));
+
+
+                 Collections.shuffle(buttonArray);
+
+                 //cardView.setCardBackgroundColor(Color.GREEN);
+
+                 buttonArray.get(2).setText(me);
+                 buttonArray.get(1).setText(newItem.get(0));
+                 buttonArray.get(0).setText(newItem.get(1));
+
+                 // cardView.setCardBackgroundColor(Color.TRANSPARENT);
+
+                 tv.setText(s);
+                 newItem.add(me);
+                 Log.d("neItem", String.valueOf(buttonArray));
+
+
+
+
+
+             }
+         });
 
 
 
