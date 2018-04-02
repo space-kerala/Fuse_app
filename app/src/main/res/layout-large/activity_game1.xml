@@ -4,79 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/CadetBlue"
     tools:context="com.example.bolt.expression.game1">
 
 
     <LinearLayout
+        android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/l1">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/t1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SCORE"
             android:textAlignment="center"
-            android:textSize="30dp"
-            android:id="@+id/t1"
-            />
+            android:textSize="30sp" />
+
         <TextView
+            android:id="@+id/t2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:id="@+id/t2"
             android:text="0"
-            />
+            android:textAlignment="center"
+            android:textSize="20sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/im"
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_bottom"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_below="@id/l1"
-        android:background="@drawable/joy" />
+        card_view:cardBackgroundColor="@color/DarkGreen"
+        card_view:cardElevation="16dp"
+        card_view:cardMaxElevation="6dp"
+        card_view:contentPadding="25dp">
 
-    <LinearLayout
+
+        <ImageView
+            android:id="@+id/im"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_below="@id/l1"
+            android:background="@drawable/joy" />
+
+    </android.support.v7.widget.CardView>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/im"
-        android:layout_marginTop="20dp"
-        >
+        android:layout_marginTop="20dp">-->
 
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="clicked"
-            android:text="JOY" />
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b2"
+        android:layout_alignBottom="@+id/b2"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:onClick="clicked"
+        android:text="JOY"
+        android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/b2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="clicked"
-            android:text="FEAR" />
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/b3"
+        android:layout_alignBottom="@+id/b3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:onClick="clicked"
+        android:text="FEAR"
+        android:textSize="30sp" />
 
-        <Button
-            android:id="@+id/b3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="clicked"
-            android:text="ANGER" />
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:onClick="clicked"
+        android:text="ANGER"
+        android:textSize="30sp" />
+    <!--</LinearLayout>-->
 
 
 </RelativeLayout>

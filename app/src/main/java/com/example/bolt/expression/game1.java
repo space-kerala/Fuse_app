@@ -1,7 +1,10 @@
 package com.example.bolt.expression;
 
+import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +23,7 @@ public class game1 extends AppCompatActivity {
     public String me,t;
     public int count=0;
     public TextView tv;
+    public CardView cardView;
 
     //public obj o = new obj(R.drawable.anger , "anger");
     //public obj ob = new obj(R.drawable.joy, "JOY");
@@ -36,6 +40,8 @@ public class game1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game1);
         iv = (ImageView)findViewById(R.id.im);
+        cardView = (CardView)findViewById(R.id.card_view_bottom);
+        cardView.setCardBackgroundColor(Color.TRANSPARENT);
         createImg();
         iv.setBackgroundResource(c);
 
@@ -61,6 +67,7 @@ public class game1 extends AppCompatActivity {
 
     public void clicked (View v) {
 
+        cardView.setCardBackgroundColor(Color.TRANSPARENT);
         b1 =(Button)v;
         tv =(TextView)findViewById(R.id.t2);
         String buttonText = b1.getText().toString();
@@ -68,6 +75,26 @@ public class game1 extends AppCompatActivity {
 
         //buttonText.equals(me)
         if(buttonText.equals(me)) {
+
+
+
+
+            cardView.setCardBackgroundColor(Color.GREEN);
+            new CountDownTimer(1000, 1000) {
+
+                @Override
+                public void onTick(long arg0) {
+                    // TODO Auto-generated method stub
+
+                }
+
+                @Override
+                public void onFinish() {
+                    cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                }
+            }.start();
+
+
 
             createImg();
 
@@ -81,12 +108,13 @@ public class game1 extends AppCompatActivity {
 
             Collections.shuffle(buttonArray);
 
+            //cardView.setCardBackgroundColor(Color.GREEN);
 
             buttonArray.get(2).setText(me);
             buttonArray.get(1).setText(newItem.get(0));
             buttonArray.get(0).setText(newItem.get(1));
 
-
+          // cardView.setCardBackgroundColor(Color.TRANSPARENT);
 
             tv.setText(s);
             newItem.add(me);
@@ -95,6 +123,7 @@ public class game1 extends AppCompatActivity {
 
 
         }
+
 
     }
 
@@ -117,6 +146,7 @@ public class game1 extends AppCompatActivity {
 
         c = rsid[idx];
         me = name[idx];
+
 
     }
 
