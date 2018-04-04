@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="e9019b57c9f00db20a7a66de71229d094ab434eb">
+        sha1="0898767872c63244e85da1e4eabe660361064ab6">
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_284a2691ca8e34066e5b8241cfd7fb9ce20c657f/classes.dex" />
     </item>
     <item
@@ -18,6 +18,15 @@
         revision="26.0.1"
         sha1="8fc5b2d799afab49b7642fd6204633fc75e31eac">
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.worker8-tourguide-1.0.17-SNAPSHOT_aa4da9966698cb9d6ad8a65d5251939ff57a1102/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/exploded-aar/com.github.worker8/tourguide/1.0.17-SNAPSHOT/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8fc5b2d799afab49b7642fd6204633fc75e31eac">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/pre-dexed/debug/com.github.worker8-tourguide-1.0.17-SNAPSHOT_aa4da9966698cb9d6ad8a65d5251939ff57a1102.jar" />
     </item>
     <item
         is-multidex="true"

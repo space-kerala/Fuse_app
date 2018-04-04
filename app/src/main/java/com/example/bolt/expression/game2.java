@@ -21,7 +21,7 @@ public class game2 extends AppCompatActivity {
     private int pi;
     private int count = 0;
     private String p,q,r;
-    private String[] str ={"sad" , "disgust", "anger","joy", "fear"};
+    private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ"};
     private Animation shake;
 
 

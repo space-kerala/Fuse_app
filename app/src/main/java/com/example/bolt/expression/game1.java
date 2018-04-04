@@ -35,8 +35,8 @@ public class game1 extends AppCompatActivity {
     //public obj o = new obj(R.drawable.anger1 , "anger1");
     //public obj ob = new obj(R.drawable.joy1, "JOY");
     public int[] bid={R.id.b1, R.id.b2,R.id.b3};
-    public int[] rsid = {R.drawable.joy1, R.drawable.anger1, R.drawable.fear1, R.drawable.disgust1, R.drawable.sad1};
-    public String[] name = { "JOY" , "ANGER" , "FEAR" , "DISGUST" , "SAD" };
+    public int[] rsid = {R.drawable.joy1, R.drawable.anger1, R.drawable.cry1, R.drawable.disgust1, R.drawable.sad1,R.drawable.satisfied1,R.drawable.smiling1,R.drawable.surprise1};
+    public String[] name = { "ആനന്ദം" , "ദേഷ്യം" , "കരച്ചിൽ " , "വെറുപ്പ് " , "വിഷമം ", "തൃപ്തി","പുഞ്ചിരി","അത്ഭുതം" };
 
     ArrayList<String> list = new ArrayList<String>();
     ArrayList<String> newItem = new ArrayList<String>();
@@ -65,12 +65,15 @@ public class game1 extends AppCompatActivity {
         buttonArray.add(b3);
         b1.setText(me);
 
-        list.add("JOY");
-        list.add("ANGER");
-        list.add("FEAR");
-        list.add("DISGUST");
-        list.add("SAD");
 
+        list.add("ആനന്ദം");
+        list.add("ദേഷ്യം");
+        list.add("കരച്ചിൽ ");
+        list.add("വെറുപ്പ് ");
+        list.add("വിഷമം ");
+        list.add("തൃപ്തി");
+        list.add("പുഞ്ചിരി ");
+        list.add("അത്ഭുതം");
 
 
 
@@ -84,6 +87,7 @@ public class game1 extends AppCompatActivity {
     }
 
     public void clicked (View v) {
+
 
         cardView.setCardBackgroundColor(Color.TRANSPARENT);
         b1 =(Button)v;
@@ -119,10 +123,6 @@ public class game1 extends AppCompatActivity {
 
 
 
-
-
-
-
                  createImg();
 
                  count+=10;
@@ -136,10 +136,12 @@ public class game1 extends AppCompatActivity {
                  Collections.shuffle(buttonArray);
 
                  //cardView.setCardBackgroundColor(Color.GREEN);
+                if(newItem.size()!=0) {
 
-                 buttonArray.get(2).setText(me);
-                 buttonArray.get(1).setText(newItem.get(0));
-                 buttonArray.get(0).setText(newItem.get(1));
+                    buttonArray.get(2).setText(me);
+                    buttonArray.get(1).setText(newItem.get(0));
+                    buttonArray.get(0).setText(newItem.get(1));
+                }
 
                  // cardView.setCardBackgroundColor(Color.TRANSPARENT);
 
