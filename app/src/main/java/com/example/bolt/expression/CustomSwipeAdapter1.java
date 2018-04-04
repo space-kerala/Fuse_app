@@ -1,5 +1,10 @@
 package com.example.bolt.expression;
 
+/**
+ * Created by root on 2/4/18.
+ */
+
+
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -8,14 +13,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class CustomSwipeAdapter extends PagerAdapter{
+public class CustomSwipeAdapter1 extends PagerAdapter{
 
-    private int[] images = { R.drawable.sad, R.drawable.disgust, R.drawable.anger, R.drawable.joy, R.drawable.fear};
+    private int[] images = { R.raw.sad, R.raw.disgust, R.raw.anger, R.raw.joy , R.raw.fear};
 
     private Context ctx;
     private LayoutInflater lF;;
 
-    public CustomSwipeAdapter(Context ctx){
+    public CustomSwipeAdapter1(Context ctx){
         this.ctx=ctx;
     }
 

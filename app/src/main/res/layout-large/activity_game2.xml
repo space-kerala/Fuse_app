@@ -17,7 +17,8 @@
         android:layout_toStartOf="@+id/score"
         android:text="SCORE:"
         android:textAlignment="viewEnd"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_gravity="end" />
 
     <TextView
         android:id="@+id/score"
@@ -43,19 +44,25 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewP"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="300dp"
         android:layout_below="@+id/ftv1"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:fadeScrollbars="false"
-        android:scrollbars="horizontal" />
+        android:scrollbars="horizontal"
+        android:scaleType="fitXY"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewP2"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_below="@+id/viewP"
-        android:layout_marginTop="20dp" />
+        android:layout_alignLeft="@+id/viewP"
+        android:layout_alignStart="@+id/viewP"
+        android:layout_alignTop="@+id/viewP"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_marginTop="233dp"
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/ftv2"

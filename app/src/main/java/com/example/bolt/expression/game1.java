@@ -32,10 +32,10 @@ public class game1 extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
 
 
-    //public obj o = new obj(R.drawable.anger , "anger");
-    //public obj ob = new obj(R.drawable.joy, "JOY");
+    //public obj o = new obj(R.drawable.anger1 , "anger1");
+    //public obj ob = new obj(R.drawable.joy1, "JOY");
     public int[] bid={R.id.b1, R.id.b2,R.id.b3};
-    public int[] rsid = {R.drawable.joy , R.drawable.anger, R.drawable.fear , R.drawable.disgust , R.drawable.sad};
+    public int[] rsid = {R.drawable.joy1, R.drawable.anger1, R.drawable.fear1, R.drawable.disgust1, R.drawable.sad1};
     public String[] name = { "JOY" , "ANGER" , "FEAR" , "DISGUST" , "SAD" };
 
     ArrayList<String> list = new ArrayList<String>();
