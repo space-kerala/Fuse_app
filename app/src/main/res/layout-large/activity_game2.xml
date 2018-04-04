@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bolt.expression.game2"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.bolt.expression.game2">
 
 
     <TextView
@@ -13,12 +13,12 @@
         android:layout_width="90dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
+        android:layout_gravity="end"
         android:layout_toLeftOf="@+id/score"
         android:layout_toStartOf="@+id/score"
         android:text="SCORE:"
         android:textAlignment="viewEnd"
-        android:textSize="24sp"
-        android:layout_gravity="end" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/score"
@@ -38,37 +38,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/score"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:textSize="25sp" />
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewP"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardview_id"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
         android:layout_below="@+id/ftv1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:fadeScrollbars="false"
-        android:scrollbars="horizontal"
-        android:scaleType="fitXY"/>
+        app:cardBackgroundColor="#eb316033">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewP2"
-        android:layout_width="500dp"
-        android:layout_height="300dp"
-        android:layout_alignLeft="@+id/viewP"
-        android:layout_alignStart="@+id/viewP"
-        android:layout_alignTop="@+id/viewP"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_marginTop="233dp"
-        android:scaleType="fitXY" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewP"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/ftv1"
+            android:layout_centerHorizontal="false"
+            android:layout_marginTop="10dp"
+            android:fadeScrollbars="false"
+            android:scaleType="fitXY" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewP2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignTop="@+id/viewP"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_marginTop="270.5dp"
+            android:scaleType="fitXY" />
+
+    </android.support.v7.widget.CardView>
 
     <TextView
         android:id="@+id/ftv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewP2"
+        android:layout_below="@+id/cardview_id"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
         android:textSize="25sp" />
@@ -78,12 +86,13 @@
         android:layout_height="80dp"
         android:layout_below="@+id/ftv2"
         android:layout_marginTop="10dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="casual"
         android:onClick="fuse"
-        android:text="FUSE"
+        android:text="FUSE !"
         android:textAlignment="center"
         android:textSize="40sp"
         android:textStyle="bold" />
-
 
 
 </RelativeLayout>
