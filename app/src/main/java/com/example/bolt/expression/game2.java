@@ -3,6 +3,7 @@ package com.example.bolt.expression;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class game2 extends AppCompatActivity {
     private Animation shake;
     private ArrayList<Integer> sounds;
     private MediaPlayer wrongVoice,mediaPlayer;
+
 
 
     @Override
@@ -57,6 +59,9 @@ public class game2 extends AppCompatActivity {
             }
         });
 
+        TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabDots);
+        tabLayout1.setupWithViewPager(viewPager, true);
+
 
         viewPager2 = (ViewPager)findViewById(R.id.viewP2);
         adapter2 = new CustomSwipeAdapter1(this);
@@ -71,6 +76,8 @@ public class game2 extends AppCompatActivity {
             }
         });
         setName();
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots1);
+        tabLayout.setupWithViewPager(viewPager2, true);
 
         sounds = new ArrayList<>();
         sounds.add(R.raw.correct1);

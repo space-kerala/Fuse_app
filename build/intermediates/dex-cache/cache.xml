@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="/root/.android/build-cache/ff0b9413272e9cffd3b9d5de27b47859d5c73914/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e427f4a93db71f08fd87288abd512e6384edb568/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="0898767872c63244e85da1e4eabe660361064ab6">
+        sha1="db84bd0e7462db84542b9458ccd38f99fdf44b3d">
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_284a2691ca8e34066e5b8241cfd7fb9ce20c657f/classes.dex" />
     </item>
     <item
@@ -20,13 +29,22 @@
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.worker8-tourguide-1.0.17-SNAPSHOT_aa4da9966698cb9d6ad8a65d5251939ff57a1102/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/exploded-aar/com.github.worker8/tourguide/1.0.17-SNAPSHOT/jars/classes.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/root/.android/build-cache/ccf5421176749662d288791fc4f4095780ae2756/output/jars/classes.jar"
+        jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="8fc5b2d799afab49b7642fd6204633fc75e31eac">
-        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/pre-dexed/debug/com.github.worker8-tourguide-1.0.17-SNAPSHOT_aa4da9966698cb9d6ad8a65d5251939ff57a1102.jar" />
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8e50bd7f391ddae3faeb2824bf5bec67916fc59e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/root/.android/build-cache/b84f29f7f5d2c1e843b8d5a2d66feb72d96d838e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a1c5170dfb54fb13be40aae8087b38954a59869a/classes.dex" />
     </item>
     <item
         is-multidex="true"
