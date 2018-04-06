@@ -59,7 +59,8 @@
             android:layout_centerHorizontal="false"
             android:layout_marginTop="10dp"
             android:fadeScrollbars="false"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:scrollIndicators="top" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewP2"
@@ -84,12 +85,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_below="@+id/ftv2"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
-        android:background="@android:color/transparent"
+        android:background="@android:color/darker_gray"
         android:fontFamily="casual"
         android:onClick="fuse"
-        android:text="FUSE !"
+        android:text="FUSE"
         android:textAlignment="center"
         android:textSize="40sp"
         android:textStyle="bold" />

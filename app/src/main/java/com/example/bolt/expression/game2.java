@@ -1,6 +1,7 @@
 package com.example.bolt.expression;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class game2 extends AppCompatActivity {
@@ -23,6 +25,8 @@ public class game2 extends AppCompatActivity {
     private String p,q,r;
     private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ"};
     private Animation shake;
+    private ArrayList<Integer> sounds;
+    private MediaPlayer wrongVoice,mediaPlayer;
 
 
     @Override
@@ -32,8 +36,11 @@ public class game2 extends AppCompatActivity {
 
         t11 = (TextView) findViewById(R.id.ftv1);
         t12 = (TextView) findViewById(R.id.ftv2);
+        t13 = (TextView) findViewById(R.id.score);
         textView = (TextView)findViewById(R.id.textView);
         shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        mediaPlayer = MediaPlayer.create(this,R.raw.alternative_correct);
+        wrongVoice = MediaPlayer.create(this, R.raw.wrong);
 
         viewPager = (ViewPager)findViewById(R.id.viewP);
         adapter = new CustomSwipeAdapter(this);
@@ -65,42 +72,81 @@ public class game2 extends AppCompatActivity {
         });
         setName();
 
-
+        sounds = new ArrayList<>();
+        sounds.add(R.raw.correct1);
+        sounds.add(R.raw.correct2);
+        sounds.add(R.raw.correct3);
+        sounds.add(R.raw.correct4);
+        sounds.add(R.raw.correct5);
+        sounds.add(R.raw.correct6);
 
     }
 
     public void fuse(View v){
 
         if( q.equals(str[viewPager.getCurrentItem()]) && r.equals(str[viewPager2.getCurrentItem()])){
-            setName();
-            count+=10;
-            t13 = (TextView) findViewById(R.id.score);
-            t13.setText(Integer.toString(count));
 
 
             v.startAnimation(shake);
-            t11.setTextColor(Color.GREEN);
-            t12.setTextColor(Color.GREEN);
-            t13.setTextColor(Color.GREEN);
-            textView.setTextColor(Color.GREEN);
-            new CountDownTimer(1000, 1000) {
+            mediaPlayer.start();
 
+            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
-                public void onTick(long arg0) {
-                    // TODO Auto-generated method stub
+                public void onCompletion(MediaPlayer mp) {
+                    int randomInt = (new Random().nextInt(sounds.size()));
+                    int sound = sounds.get(randomInt);
+                    mp = MediaPlayer.create(getApplicationContext(), sound);
+                    mp.start();
+                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
 
+                            setName();
+                            count+=10;
+
+                            t13.setText(Integer.toString(count));
+                        }
+                    });
                 }
+            });
 
-                @Override
-                public void onFinish() {
 
-                    t11.setTextColor(Color.GRAY);
-                    t12.setTextColor(Color.GRAY);
-                    t13.setTextColor(Color.GRAY);
-                    textView.setTextColor(Color.GRAY);
-                }
-            }.start();
+                   /* setName();
+                    count+=10;
+                    t13 = (TextView) findViewById(R.id.score);
+                    t13.setText(Integer.toString(count));*/
 
+
+
+                    t11.setTextColor(Color.GREEN);
+                    t12.setTextColor(Color.GREEN);
+                    t13.setTextColor(Color.GREEN);
+                    textView.setTextColor(Color.GREEN);
+                    new CountDownTimer(1000, 1000) {
+
+                        @Override
+                        public void onTick(long arg0) {
+                            // TODO Auto-generated method stub
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+
+                            t11.setTextColor(Color.GRAY);
+                            t12.setTextColor(Color.GRAY);
+                            t13.setTextColor(Color.GRAY);
+                            textView.setTextColor(Color.GRAY);
+                        }
+                    }.start();
+
+
+
+
+
+        }
+        else{
+            wrongVoice.start();
         }
 
     }
