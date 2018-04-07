@@ -12,11 +12,20 @@
     </item>
     <item
         is-multidex="true"
+        jar="/root/.android/build-cache/b84f29f7f5d2c1e843b8d5a2d66feb72d96d838e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a1c5170dfb54fb13be40aae8087b38954a59869a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="db84bd0e7462db84542b9458ccd38f99fdf44b3d">
+        sha1="42ad41f1f9caf86c44d111acfbf9dfb29836f5b7">
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_284a2691ca8e34066e5b8241cfd7fb9ce20c657f/classes.dex" />
     </item>
     <item
@@ -36,15 +45,6 @@
         revision="26.0.1"
         sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
         <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8e50bd7f391ddae3faeb2824bf5bec67916fc59e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/root/.android/build-cache/b84f29f7f5d2c1e843b8d5a2d66feb72d96d838e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="/home/aahav/Documents/android_workspace/Expression_app/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a1c5170dfb54fb13be40aae8087b38954a59869a/classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -22,4 +22,8 @@ public class nameGame extends AppCompatActivity {
         Intent f = new Intent(nameGame.this , game1.class);
         startActivity(f);
     }
+    public void setExit(View view){
+
+        this.finishAffinity();
+    }
 }

@@ -8,13 +8,7 @@
     tools:context="com.example.bolt.expression.FuseGame">
 
 
-    <TextView
-        android:id="@+id/ft1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FUSE"
-        android:textAlignment="center"
-        android:textSize="45sp" />
+
 
    <!-- <Button
         android:id="@+id/fbtn"
@@ -41,33 +35,28 @@
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="70dp"
-        android:text="@string/welcome_fuse"
+        android:text="Game Over"
         android:textColor="@color/AliceBlue"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentStart="false"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/fuse_rule"
-        android:textColor="@color/AliceBlue"
-        android:textSize="28sp" />
+        android:textSize="45sp" />
 
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/textView4"
+        android:id="@+id/restart"
+        android:layout_width="400dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="64dp"
-        android:background="@drawable/play1"
+        android:background="@drawable/restart"
         android:onClick="fuseClick" />
+
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/restart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/exit"
+        android:onClick="setExit" />
 
 </RelativeLayout>

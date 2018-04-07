@@ -97,15 +97,15 @@ public class game1 extends AppCompatActivity {
 
     }
 
+
+
     public void clicked (View v) {
 
-        if(temp==15){
+       /* if(temp==15){
 
-            Intent intent = new Intent(this,MainActivity.class);
+            Intent intent = new Intent(this,nameGame.class);
             startActivity(intent);
-        }
-
-        else {
+        }*/
 
 
             cardView.setCardBackgroundColor(Color.TRANSPARENT);
@@ -116,74 +116,100 @@ public class game1 extends AppCompatActivity {
 
             //buttonText.equals(me)
             if (buttonText.equals(me)) {
-                v.startAnimation(shake);
 
-                cardView.setCardBackgroundColor(Color.GREEN);
-                new CountDownTimer(1000, 1000) {
+                if(temp==15){
 
-                    @Override
-                    public void onTick(long arg0) {
-                        // TODO Auto-generated method stub
+                    v.startAnimation(shake);
 
-                    }
+                    cardView.setCardBackgroundColor(Color.GREEN);
+                    new CountDownTimer(1000, 1000) {
 
-                    @Override
-                    public void onFinish() {
-                        cardView.setCardBackgroundColor(Color.TRANSPARENT);
-                    }
-                }.start();
+                        @Override
+                        public void onTick(long arg0) {
+                            // TODO Auto-generated method stub
 
+                        }
 
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
+                        @Override
+                        public void onFinish() {
+                            cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                        }
+                    }.start();
 
 
-                        int randomInt = (new Random().nextInt(sounds.size()));
-                        int sound = sounds.get(randomInt);
-                        mp = MediaPlayer.create(getApplicationContext(), sound);
-                        mp.start();
-                        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                            @Override
-                            public void onCompletion(MediaPlayer mp) {
+
+                    Intent intent = new Intent(this,nameGame.class);
+                    startActivity(intent);
+                }
+
+                else {
 
 
-                                createImg();
+                    v.startAnimation(shake);
 
-                                count += 10;
-                                String s = String.valueOf(count);
-                                temp++;
-                                level.setText(String.valueOf(temp));
+                    cardView.setCardBackgroundColor(Color.GREEN);
+                    new CountDownTimer(1000, 1000) {
 
-                                iv.setBackgroundResource(c);
-                                shuffle();
+                        @Override
+                        public void onTick(long arg0) {
+                            // TODO Auto-generated method stub
 
-                                Log.d("neItem", String.valueOf(list));
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                        }
+                    }.start();
 
 
-                                Collections.shuffle(buttonArray);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
 
-                                //cardView.setCardBackgroundColor(Color.GREEN);
-                                if (newItem.size() != 0) {
 
-                                    buttonArray.get(2).setText(me);
-                                    buttonArray.get(1).setText(newItem.get(0));
-                                    buttonArray.get(0).setText(newItem.get(1));
+                            int randomInt = (new Random().nextInt(sounds.size()));
+                            int sound = sounds.get(randomInt);
+                            mp = MediaPlayer.create(getApplicationContext(), sound);
+                            mp.start();
+                            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mp) {
+
+
+                                    createImg();
+
+                                    count += 10;
+                                    String s = String.valueOf(count);
+                                    temp++;
+                                    level.setText(String.valueOf(temp));
+
+                                    iv.setBackgroundResource(c);
+                                    shuffle();
+
+                                    Log.d("neItem", String.valueOf(list));
+
+
+                                    Collections.shuffle(buttonArray);
+
+                                    //cardView.setCardBackgroundColor(Color.GREEN);
+                                    if (newItem.size() != 0) {
+
+                                        buttonArray.get(2).setText(me);
+                                        buttonArray.get(1).setText(newItem.get(0));
+                                        buttonArray.get(0).setText(newItem.get(1));
+                                    }
+
+                                    // cardView.setCardBackgroundColor(Color.TRANSPARENT);
+
+                                    tv.setText(s);
+                                    newItem.add(me);
+                                    Log.d("neItem", String.valueOf(buttonArray));
+
+
                                 }
-
-                                // cardView.setCardBackgroundColor(Color.TRANSPARENT);
-
-                                tv.setText(s);
-                                newItem.add(me);
-                                Log.d("neItem", String.valueOf(buttonArray));
-
-
-
-
-
-                            }
-                        });
+                            });
 
 
                    /*
@@ -217,16 +243,16 @@ public class game1 extends AppCompatActivity {
                         Log.d("neItem", String.valueOf(buttonArray));*/
 
 
-                    }
-                });
+                        }
+                    });
 
-
+                }
             }
             else{
                   wrongVoice.start();
             }
 
-        }
+
     }
 
     public void shuffle(){

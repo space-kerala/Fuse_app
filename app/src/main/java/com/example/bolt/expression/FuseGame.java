@@ -18,4 +18,8 @@ public class FuseGame extends AppCompatActivity {
         Intent g = new Intent(FuseGame.this , game2.class);
         startActivity(g);
     }
+    public void setExit(View view){
+
+        this.finishAffinity();
+    }
 }

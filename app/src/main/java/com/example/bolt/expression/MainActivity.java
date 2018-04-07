@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void nameClick(View v ){
-        Intent q = new Intent(MainActivity.this , nameGame.class);
+        Intent q = new Intent(MainActivity.this , game1.class);
         startActivity(q);
     }
 
 
     public void fuseClick(View v ){
-        Intent d = new Intent(MainActivity.this , FuseGame.class);
+        Intent d = new Intent(MainActivity.this , game2.class);
         startActivity(d);
     }
 

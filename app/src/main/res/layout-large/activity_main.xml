@@ -41,7 +41,8 @@
      </LinearLayout>-->
 
      <TextView
-         android:layout_width="200dp"
+         android:id="@+id/textview"
+         android:layout_width="160dp"
          android:layout_height="80dp"
          android:layout_alignParentTop="true"
          android:layout_centerHorizontal="true"
@@ -50,7 +51,7 @@
          android:textColor="@color/AliceBlue"
          android:textSize="45sp" />
 
-     <TextView
+    <!-- <TextView
          android:id="@+id/exoression_challenge_text"
          android:layout_width="350dp"
          android:layout_height="50dp"
@@ -62,25 +63,22 @@
          android:layout_marginStart="44dp"
          android:text="Expression Challenge"
          android:textColor="@color/AliceBlue"
-         android:textSize="35dp" />
+         android:textSize="35dp" />-->
 
 
      <ImageButton
          android:id="@+id/nameGame"
-         android:layout_width="150dp"
-         android:layout_height="150dp"
-         android:layout_above="@+id/Fuse"
-         android:layout_marginBottom="32dp"
-         android:layout_marginLeft="50dp"
-         android:layout_marginStart="50dp"
-         android:layout_toEndOf="@+id/exoression_challenge_text"
-         android:layout_toRightOf="@+id/exoression_challenge_text"
+         android:layout_width="450dp"
+         android:layout_height="170dp"
+         android:layout_below="@+id/textview"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="100dp"
          android:layout_weight="1"
-         android:background="@drawable/play"
+         android:background="@drawable/challenge"
          android:onClick="nameClick" />
 
 
-     <TextView
+   <!--  <TextView
          android:id="@+id/expression_fuse_text"
          android:layout_width="280dp"
          android:layout_height="50dp"
@@ -89,18 +87,20 @@
          android:layout_centerVertical="true"
          android:text="Expression FUSE"
          android:textColor="@color/AliceBlue"
-         android:textSize="35dp" />
+         android:textSize="35dp" />-->
 
 
      <ImageButton
          android:id="@+id/Fuse"
-         android:layout_width="150dp"
-         android:layout_height="150dp"
+         android:layout_width="450dp"
+         android:layout_height="170dp"
          android:layout_alignLeft="@+id/nameGame"
          android:layout_alignStart="@+id/nameGame"
-         android:layout_centerVertical="true"
+         android:layout_below="@+id/nameGame"
+         android:layout_centerVertical="false"
+         android:layout_marginTop="50dp"
          android:layout_weight="1"
-         android:background="@drawable/play"
+         android:background="@drawable/fuse_new"
          android:onClick="fuseClick"
          tools:ignore="ContentDescription,RtlHardcoded" />
 

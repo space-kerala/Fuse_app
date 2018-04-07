@@ -12,25 +12,13 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="200dp"
-        android:text="@string/welcome_challenge"
+        android:layout_marginTop="56dp"
+        android:text="Game Over"
         android:textColor="@color/AliceBlue"
-        android:textSize="30sp" />
+        android:textSize="40sp" />
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/challenge_rule"
-        android:textColor="@color/AliceBlue"
-        android:textSize="28sp" />
 
     <!--<Button
         android:id="@+id/button"
@@ -43,13 +31,27 @@
         android:text="PLAY"
         tools:ignore="HardcodedText" />-->
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+    <ImageButton
+        android:id="@+id/exit"
+        android:layout_width="400dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/restart"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/play1"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/exit"
+        android:onClick="setExit" />
+
+    <ImageButton
+        android:id="@+id/restart"
+        android:layout_width="400dp"
+        android:layout_height="140dp"
+
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/restart"
         android:onClick="startGame" />
 
 </RelativeLayout>

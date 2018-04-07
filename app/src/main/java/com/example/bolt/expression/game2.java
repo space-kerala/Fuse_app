@@ -1,5 +1,6 @@
 package com.example.bolt.expression;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
@@ -20,8 +21,8 @@ public class game2 extends AppCompatActivity {
     private ViewPager viewPager,viewPager2;
     private CustomSwipeAdapter adapter;
     private CustomSwipeAdapter1 adapter2;
-    private TextView t11,t12,t13,textView;
-    private int pi;
+    private TextView t11,t12,t13,textView,level;
+    private int pi,temp=1;
     private int count = 0;
     private String p,q,r;
     private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ"};
@@ -39,6 +40,7 @@ public class game2 extends AppCompatActivity {
         t11 = (TextView) findViewById(R.id.ftv1);
         t12 = (TextView) findViewById(R.id.ftv2);
         t13 = (TextView) findViewById(R.id.score);
+        level = (TextView) findViewById(R.id.levelNo_id);
         textView = (TextView)findViewById(R.id.textView);
         shake = AnimationUtils.loadAnimation(this, R.anim.shake);
         mediaPlayer = MediaPlayer.create(this,R.raw.alternative_correct);
@@ -93,29 +95,37 @@ public class game2 extends AppCompatActivity {
 
         if( q.equals(str[viewPager.getCurrentItem()]) && r.equals(str[viewPager2.getCurrentItem()])){
 
+         if(temp==15){
+             Intent intent = new Intent(this,FuseGame.class);
+             startActivity(intent);
+         }
+         else {
 
-            v.startAnimation(shake);
-            mediaPlayer.start();
 
-            mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    int randomInt = (new Random().nextInt(sounds.size()));
-                    int sound = sounds.get(randomInt);
-                    mp = MediaPlayer.create(getApplicationContext(), sound);
-                    mp.start();
-                    mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
+             v.startAnimation(shake);
+             mediaPlayer.start();
 
-                            setName();
-                            count+=10;
+             mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                 @Override
+                 public void onCompletion(MediaPlayer mp) {
+                     int randomInt = (new Random().nextInt(sounds.size()));
+                     int sound = sounds.get(randomInt);
+                     mp = MediaPlayer.create(getApplicationContext(), sound);
+                     mp.start();
+                     mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                         @Override
+                         public void onCompletion(MediaPlayer mp) {
 
-                            t13.setText(Integer.toString(count));
-                        }
-                    });
-                }
-            });
+                             setName();
+                             count += 10;
+
+                             t13.setText(Integer.toString(count));
+                             temp++;
+                             level.setText(String.valueOf(temp));
+                         }
+                     });
+                 }
+             });
 
 
                    /* setName();
@@ -124,32 +134,30 @@ public class game2 extends AppCompatActivity {
                     t13.setText(Integer.toString(count));*/
 
 
+             t11.setTextColor(Color.GREEN);
+             t12.setTextColor(Color.GREEN);
+             t13.setTextColor(Color.GREEN);
+             textView.setTextColor(Color.GREEN);
+             new CountDownTimer(1000, 1000) {
 
-                    t11.setTextColor(Color.GREEN);
-                    t12.setTextColor(Color.GREEN);
-                    t13.setTextColor(Color.GREEN);
-                    textView.setTextColor(Color.GREEN);
-                    new CountDownTimer(1000, 1000) {
+                 @Override
+                 public void onTick(long arg0) {
+                     // TODO Auto-generated method stub
 
-                        @Override
-                        public void onTick(long arg0) {
-                            // TODO Auto-generated method stub
+                 }
 
-                        }
+                 @Override
+                 public void onFinish() {
 
-                        @Override
-                        public void onFinish() {
-
-                            t11.setTextColor(Color.GRAY);
-                            t12.setTextColor(Color.GRAY);
-                            t13.setTextColor(Color.GRAY);
-                            textView.setTextColor(Color.GRAY);
-                        }
-                    }.start();
-
+                     t11.setTextColor(Color.GRAY);
+                     t12.setTextColor(Color.GRAY);
+                     t13.setTextColor(Color.GRAY);
+                     textView.setTextColor(Color.GRAY);
+                 }
+             }.start();
 
 
-
+         }
 
         }
         else{
@@ -175,6 +183,11 @@ public class game2 extends AppCompatActivity {
         t12.setText(r);
 
 
+
+    }
+    public void setHome(View view){
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
 
     }
 
