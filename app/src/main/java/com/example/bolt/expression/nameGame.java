@@ -26,4 +26,8 @@ public class nameGame extends AppCompatActivity {
 
         this.finishAffinity();
     }
+    @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
 }

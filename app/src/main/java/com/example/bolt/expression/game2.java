@@ -25,7 +25,7 @@ public class game2 extends AppCompatActivity {
     private int pi,temp=1;
     private int count = 0;
     private String p,q,r;
-    private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ"};
+    private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ","അത്ഭുതം","പുഞ്ചിരി","തൃപ്തി"};
     private Animation shake;
     private ArrayList<Integer> sounds;
     private MediaPlayer wrongVoice,mediaPlayer;
@@ -149,8 +149,8 @@ public class game2 extends AppCompatActivity {
                  @Override
                  public void onFinish() {
 
-                     t11.setTextColor(Color.GRAY);
-                     t12.setTextColor(Color.GRAY);
+                     t11.setTextColor(Color.WHITE);
+                     t12.setTextColor(Color.WHITE);
                      t13.setTextColor(Color.GRAY);
                      textView.setTextColor(Color.GRAY);
                  }

@@ -22,4 +22,8 @@ public class FuseGame extends AppCompatActivity {
 
         this.finishAffinity();
     }
+    @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
 }

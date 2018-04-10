@@ -53,5 +53,9 @@ public class MainActivity extends AppCompatActivity {
         Intent d = new Intent(MainActivity.this , game2.class);
         startActivity(d);
     }
+    @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
 
 }

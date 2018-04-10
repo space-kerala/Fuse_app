@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 
 public class CustomSwipeAdapter1 extends PagerAdapter{
 
-    private int[] images = { R.raw.sad, R.raw.disgust, R.raw.anger, R.raw.joy , R.raw.cry};
+    private int[] images = { R.raw.sad, R.raw.disgust, R.raw.anger, R.raw.joy , R.raw.cry,R.raw.surprise,R.raw.smiling,R.raw.satisfied};
 
     private Context ctx;
     private LayoutInflater lF;;
