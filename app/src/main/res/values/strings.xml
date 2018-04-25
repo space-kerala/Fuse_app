@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Expression</string>
+    <string name="app_name">Fuse</string>
 
     <string name="title_activity_camera">Camera</string>
     <string name="dummy_button">Dummy Button</string>
@@ -8,6 +8,9 @@
     <string name="challenge_rule">Select right Expression name of the given image</string>
     <string name="welcome_fuse">Welcome to Expression FUSE Game.</string>
     <string name="fuse_rule">Swipe and select the images that match both Expression names</string>
+    <string name="right_text">Right  \u0020\u0020:</string>
+    <string name="wrong_text">Wrong :</string>
+    <string name="accuracy_text">Accuracy  \u0020:</string>
 
 
 </resources>

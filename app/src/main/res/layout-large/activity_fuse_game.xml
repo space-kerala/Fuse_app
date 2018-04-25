@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/DarkCyan"
-    tools:context="com.example.bolt.expression.FuseGame">
+    tools:context="com.example.bolt.expressionFuse.FuseGame">
 
 
 

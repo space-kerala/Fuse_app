@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bolt.expression.Splashscreen">
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    tools:context="com.example.bolt.expressionFuse.Splashscreen">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/splashscreen"
-        android:scaleType="centerCrop"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/smiley"
         tools:layout_editor_absoluteX="51dp"
         tools:layout_editor_absoluteY="16dp" />
-</LinearLayout>
+</RelativeLayout>

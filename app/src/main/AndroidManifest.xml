@@ -10,11 +10,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="Expression"
+        android:icon="@drawable/fuse_logo"
+        android:label="Fuse"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name="com.example.bolt.expression.Splashscreen">
+        <activity android:name="com.example.bolt.expressionFuse.Splashscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +22,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.bolt.expression.MainActivity"
+            android:name="com.example.bolt.expressionFuse.MainActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.example.bolt.expression.Camera"
+            android:name="com.example.bolt.expressionFuse.Camera"
             android:screenOrientation="portrait" />
-        <activity android:name="com.example.bolt.expression.cameraTut" />
-        <activity android:name="com.example.bolt.expression.nameGame" />
-        <activity android:name="com.example.bolt.expression.game1" />
-        <activity android:name="com.example.bolt.expression.FuseGame" />
-        <activity android:name="com.example.bolt.expression.game2"></activity>
+        <activity android:name="com.example.bolt.expressionFuse.cameraTut" />
+        <activity android:name="com.example.bolt.expressionFuse.nameGame" />
+        <activity android:name="com.example.bolt.expressionFuse.game1" />
+        <activity android:name="com.example.bolt.expressionFuse.FuseGame" />
+        <activity android:name="com.example.bolt.expressionFuse.Game4" />
+        <activity android:name="com.example.bolt.expressionFuse.Game2" />
+        <activity android:name="com.example.bolt.expressionFuse.Game1" />
+        <activity android:name="com.example.bolt.expressionFuse.Game3" />
+        <activity android:name="com.example.bolt.expressionFuse.LastActivity"></activity>
     </application>
 
 </manifest>
