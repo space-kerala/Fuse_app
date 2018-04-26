@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -42,13 +43,14 @@ public class Game2 extends AppCompatActivity {
     private CustomSwipeAdapter adapter;
     private CustomSwipeAdapter1 adapter2;
     private TextView t11,t12,t13,textView,level,right,wrong;
-    private int pi,temp=1,ran;
+    private int pi,temp=1,ran,entry;
     private int count = 0, x =0;
     private String p,q,r;
     private String[] str ={"വിഷമം" , "വെറുപ്പ്", "ദേഷ്യം","ആനന്ദം", "കരച്ചിൽ","അത്ഭുതം","പുഞ്ചിരി","തൃപ്തി"};
     private Animation shake;
     private ArrayList<Integer> sounds;
     private MediaPlayer wrongVoice,mediaPlayer;
+    public CardView cardView;
 
 
 
@@ -65,9 +67,12 @@ public class Game2 extends AppCompatActivity {
         shake = AnimationUtils.loadAnimation(this, R.anim.shake);
         mediaPlayer = MediaPlayer.create(this,R.raw.alternative_correct);
         wrongVoice = MediaPlayer.create(this, R.raw.wrong);
+        cardView = (CardView)findViewById(R.id.cardview_id);
 
         right = (TextView) findViewById(R.id.rightNo_id);
         wrong = (TextView) findViewById(R.id.wrongNo_id);
+
+        t13.setText(String.valueOf(SceneTracker.getLevel()));
 
 
         viewPager = (ViewPager)findViewById(R.id.viewP);
@@ -116,63 +121,26 @@ public class Game2 extends AppCompatActivity {
 
     }
 
-    public void fuse(View v){
+    public void fuse(View v) {
 
-        if( q.equals(str[viewPager.getCurrentItem()]) ){
-
-            SceneTracker.setCorrectedItem((SceneTracker.getCorrectedItem()+1));
-            right.setText(String.valueOf(SceneTracker.getCorrectedItem()));
+        ran = new Random().nextInt(str.length);
+        if (entry == 0) {
 
 
-            if(temp==10){
-                SceneTracker.setLevel(3);
-                Intent intent = new Intent(this,nameGame.class);
-                startActivity(intent);
-            }
-            else {
-                SceneTracker.setLevel(2);
+            if (q.equals(str[viewPager.getCurrentItem()])) {
 
-                if(x!=1) {
+                entry=1;
+                viewPager.beginFakeDrag();
 
 
-                    v.startAnimation(shake);
-                    mediaPlayer.start();
-
-                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            int randomInt = (new Random().nextInt(sounds.size()));
-                            int sound = sounds.get(randomInt);
-                            mp = MediaPlayer.create(getApplicationContext(), sound);
-                            mp.start();
-                            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                                @Override
-                                public void onCompletion(MediaPlayer mp) {
-
-                                    setName();
-                                    ran = new Random().nextInt(str.length);
-                                    viewPager.setCurrentItem(ran);
-                                    count += 10;
-                                     x=0;
-                                    t13.setText(Integer.toString(count));
-                                    temp++;
-                                    level.setText(String.valueOf(temp));
-                                }
-                            });
-                        }
-                    });
+                SceneTracker.setCorrectedItem((SceneTracker.getCorrectedItem() + 1));
+                right.setText(String.valueOf(SceneTracker.getCorrectedItem()));
 
 
-                   /* setName();
-                    count+=10;
-                    t13 = (TextView) findViewById(R.id.score);
-                    t13.setText(Integer.toString(count));*/
+                if (temp == 10) {
+                    SceneTracker.setLevel(3);
 
-
-                    t11.setTextColor(Color.GREEN);
-                    // t12.setTextColor(Color.GREEN);
-                    t13.setTextColor(Color.GREEN);
-                    textView.setTextColor(Color.GREEN);
+                    cardView.setCardBackgroundColor(Color.GREEN);
                     new CountDownTimer(1000, 1000) {
 
                         @Override
@@ -183,24 +151,138 @@ public class Game2 extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
-
-                            t11.setTextColor(Color.WHITE);
-                            // t12.setTextColor(Color.WHITE);
-                            t13.setTextColor(Color.GRAY);
-                            textView.setTextColor(Color.GRAY);
+                            cardView.setCardBackgroundColor(getResources().getColor(R.color.expression_green));
                         }
                     }.start();
-                 x=1;
+
+
+                    final Intent intent = new Intent(this, nameGame.class);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+
+                            int randomInt = (new Random().nextInt(sounds.size()));
+                            int sound = sounds.get(randomInt);
+                            mp = MediaPlayer.create(getApplicationContext(), sound);
+                            mp.start();
+                            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                @Override
+                                public void onCompletion(MediaPlayer mp) {
+                                    startActivity(intent);
+                                }
+                            });
+
+                        }
+                    });
+
+
+                } else {
+                    SceneTracker.setLevel(2);
+
+                    cardView.setCardBackgroundColor(Color.GREEN);
+                    new CountDownTimer(1000, 1000) {
+
+                        @Override
+                        public void onTick(long arg0) {
+                            // TODO Auto-generated method stub
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            cardView.setCardBackgroundColor(getResources().getColor(R.color.expression_green));
+                        }
+                    }.start();
+
+
+                    if (x != 1) {
+
+
+                        v.startAnimation(shake);
+                        mediaPlayer.start();
+
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mp) {
+                                int randomInt = (new Random().nextInt(sounds.size()));
+                                int sound = sounds.get(randomInt);
+                                mp = MediaPlayer.create(getApplicationContext(), sound);
+                                mp.start();
+                                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mp) {
+
+                                        setName();
+                                        entry=0;
+                                        viewPager.endFakeDrag();
+
+                                        viewPager.setCurrentItem(ran);
+                                        count += 10;
+                                        x = 0;
+                                       // t13.setText(Integer.toString(count));
+                                        temp++;
+                                        level.setText(String.valueOf(temp));
+                                    }
+                                });
+                            }
+                        });
+
+
+                   /* setName();
+                    count+=10;
+                    t13 = (TextView) findViewById(R.id.score);
+                    t13.setText(Integer.toString(count));*/
+
+
+                        t11.setTextColor(Color.GREEN);
+                        // t12.setTextColor(Color.GREEN);
+                        t13.setTextColor(Color.GREEN);
+                        textView.setTextColor(Color.GREEN);
+                        new CountDownTimer(1000, 1000) {
+
+                            @Override
+                            public void onTick(long arg0) {
+                                // TODO Auto-generated method stub
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+
+                                t11.setTextColor(Color.WHITE);
+                                // t12.setTextColor(Color.WHITE);
+                                t13.setTextColor(Color.GRAY);
+                                textView.setTextColor(Color.GRAY);
+                            }
+                        }.start();
+                        x = 1;
+                    }
                 }
+
+            } else {
+                SceneTracker.setWrongItem((SceneTracker.getWrongItem() + 1));
+                wrong.setText(String.valueOf(SceneTracker.getWrongItem()));
+
+                cardView.setCardBackgroundColor(Color.RED);
+                new CountDownTimer(1000, 1000) {
+
+                    @Override
+                    public void onTick(long arg0) {
+                        // TODO Auto-generated method stub
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        cardView.setCardBackgroundColor(getResources().getColor(R.color.expression_green));
+                    }
+                }.start();
+
+                wrongVoice.start();
             }
 
         }
-        else{
-            SceneTracker.setWrongItem((SceneTracker.getWrongItem()+1));
-            wrong.setText(String.valueOf(SceneTracker.getWrongItem()));
-            wrongVoice.start();
-        }
-
     }
 
     public String randomName(){

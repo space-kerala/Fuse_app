@@ -134,7 +134,7 @@ public class game1 extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
-                            cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                            cardView.setCardBackgroundColor(getResources().getColor(R.color.expression_green));
                         }
                     }.start();
 
@@ -160,7 +160,7 @@ public class game1 extends AppCompatActivity {
 
                         @Override
                         public void onFinish() {
-                            cardView.setCardBackgroundColor(Color.TRANSPARENT);
+                            cardView.setCardBackgroundColor(getResources().getColor(R.color.expression_green));
                         }
                     }.start();
 
