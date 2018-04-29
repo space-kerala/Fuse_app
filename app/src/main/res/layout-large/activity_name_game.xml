@@ -39,7 +39,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
         android:layout_marginTop="30dp"
-        android:background="@drawable/exit"
+        android:background="@drawable/home1"
         android:onClick="setExit" />
 
     <ImageButton
@@ -62,7 +62,7 @@
         android:layout_below="@+id/accuracy_id"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/next_level"
         android:onClick="nextGame" />
 

@@ -40,7 +40,12 @@ public class LastActivity extends AppCompatActivity {
 
     public void setExit(View view){
 
-        this.finishAffinity();
+        SceneTracker.setCorrectedItem(0);
+        SceneTracker.setWrongItem(0);
+        SceneTracker.setLevel(1);
+
+        Intent f = new Intent(LastActivity.this , MainActivity.class);
+        startActivity(f);
     }
     @Override
     public void onBackPressed() {

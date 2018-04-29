@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.example.bolt.expression.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Game4 extends AppCompatActivity {
@@ -33,6 +34,7 @@ public class Game4 extends AppCompatActivity {
     private ArrayList<Integer> sounds;
     private MediaPlayer wrongVoice,mediaPlayer;
     public  CardView cardView;
+    ArrayList<Integer> random_array = new ArrayList<>();
 
 
 
@@ -53,6 +55,10 @@ public class Game4 extends AppCompatActivity {
 
         right = (TextView) findViewById(R.id.rightNo_id);
         wrong = (TextView) findViewById(R.id.wrongNo_id);
+
+        for(int i=0;i<8;i++){
+            random_array.add(i);
+        }
 
         t13.setText(String.valueOf(SceneTracker.getLevel()));
 
@@ -104,7 +110,7 @@ public class Game4 extends AppCompatActivity {
     public void fuse(View v) {
         if (entry == 0) {
 
-            if (r.equals(str[viewPager.getCurrentItem()]) && r.equals(str[viewPager2.getCurrentItem()])) {
+            if (q.equals(str[viewPager.getCurrentItem()]) && r.equals(str[viewPager2.getCurrentItem()])) {
 
                 entry=1;
                 viewPager2.beginFakeDrag();
@@ -275,16 +281,46 @@ public class Game4 extends AppCompatActivity {
         t11.setText(q);*/
 
 
-        r=randomName();
-        t12.setText(r);
+        /*r=randomName();
+        t12.setText(r);*/
+
+        if(random_array.isEmpty()){
+            for(int i=0;i<8;i++){
+                random_array.add(i);
+            }
+        }
+
+        Collections.shuffle(random_array);
+
+
+
+        q = str[random_array.get(0)];
+        r = str[random_array.get(0)];
+
+
+        // q=randomName();
+        t12.setText(q);
+
+        random_array.remove(0);
 
 
 
     }
     public void setHome(View view){
+        SceneTracker.setLevel(1);
+        SceneTracker.setCorrectedItem(0);
+        SceneTracker.setWrongItem(0);
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
 
+    }
+    @Override
+    public void onBackPressed() {
+        SceneTracker.setLevel(1);
+        SceneTracker.setCorrectedItem(0);
+        SceneTracker.setWrongItem(0);
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 
 }

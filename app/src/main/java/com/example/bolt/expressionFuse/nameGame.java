@@ -38,7 +38,7 @@ public class nameGame extends AppCompatActivity {
             case 2:
                 SceneTracker.setCorrectedItem(0);
                 SceneTracker.setWrongItem(0);
-                SceneTracker.setLevel(0);
+                SceneTracker.setLevel(SceneTracker.getLevel()-1);
 
                 Intent f = new Intent(nameGame.this , Game1.class);
                 startActivity(f);
@@ -46,14 +46,14 @@ public class nameGame extends AppCompatActivity {
             case 3 :
                 SceneTracker.setCorrectedItem(0);
                 SceneTracker.setWrongItem(0);
-                SceneTracker.setLevel(0);
+                SceneTracker.setLevel(SceneTracker.getLevel()-1);
                 Intent i = new Intent(nameGame.this , Game2.class);
                 startActivity(i);
                 break;
             case 4 :
                 SceneTracker.setCorrectedItem(0);
                 SceneTracker.setWrongItem(0);
-                SceneTracker.setLevel(0);
+                SceneTracker.setLevel(SceneTracker.getLevel()-1);
                 Intent e = new Intent(nameGame.this , Game3.class);
                 startActivity(e);
                 break;
@@ -94,7 +94,12 @@ public class nameGame extends AppCompatActivity {
     }
     public void setExit(View view){
 
-        this.finishAffinity();
+        SceneTracker.setCorrectedItem(0);
+        SceneTracker.setWrongItem(0);
+        SceneTracker.setLevel(1);
+
+        Intent f = new Intent(nameGame.this , MainActivity.class);
+        startActivity(f);
     }
     @Override
     public void onBackPressed() {

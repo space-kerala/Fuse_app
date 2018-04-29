@@ -17,7 +17,7 @@
         android:layout_marginTop="56dp"
         android:text="Game Over"
         android:textColor="@color/AliceBlue"
-        android:textSize="40sp" />
+        android:textSize="45sp" />
 
 
     <!--<Button
@@ -39,7 +39,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="false"
         android:layout_marginTop="40dp"
-        android:background="@drawable/exit"
+        android:background="@drawable/home1"
         android:onClick="setExit" />
 
     <ImageButton
